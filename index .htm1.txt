@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trendora</title>
+
+<style>
+body{
+margin:0;
+font-family: Helvetica, Arial, sans-serif;
+background:white;
+color:black;
+}
+
+/* NAV */
+nav{
+display:flex;
+justify-content:space-between;
+padding:25px 60px;
+font-size:11px;
+letter-spacing:3px;
+border-bottom:1px solid #eee;
+position:sticky;
+top:0;
+background:white;
+}
+
+/* HERO */
+.hero{
+height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:110px;
+font-weight:200;
+letter-spacing:15px;
+margin:0;
+}
+
+.hero p{
+font-size:13px;
+color:#666;
+letter-spacing:2px;
+margin-top:10px;
+}
+
+/* GRID */
+.products{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+padding:60px;
+}
+
+/* CARD */
+.card{
+text-align:center;
+border:1px solid #f0f0f0;
+padding:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(0,0,0,0.05);
+}
+
+/* IMAGE */
+img{
+width:100%;
+height:420px;
+object-fit:cover;
+filter: grayscale(100%);
+transition:0.4s;
+}
+
+img:hover{
+filter: grayscale(0%);
+transform: scale(1.02);
+}
+
+/* BUTTON */
+button{
+margin-top:10px;
+padding:10px 18px;
+border:1px solid black;
+background:white;
+cursor:pointer;
+font-size:11px;
+letter-spacing:2px;
+transition:0.3s;
+}
+
+button:hover{
+background:black;
+color:white;
+}
+
+/* CART */
+.cart{
+position:fixed;
+top:20px;
+right:20px;
+border:1px solid black;
+padding:12px;
+font-size:12px;
+background:white;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:50px;
+font-size:11px;
+color:#999;
+border-top:1px solid #eee;
+margin-top:60px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{font-size:50px;}
+.products{grid-template-columns:1fr;padding:20px;}
+img{height:350px;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div>TRENDORA</div>
+<div>SHOP / ABOUT / CART</div>
+</nav>
+
+<div class="cart">
+🛒 <span id="count">0</span>
+</div>
+
+<div class="hero">
+<h1>TRENDORA</h1>
+<p>MINIMAL LUXURY FASHION EXPERIENCE</p>
+</div>
+
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975958225-0b5d2c2c2c2c">
+<p>Desert Hoodie — $120</p>
+<button onclick="add()">ADD TO CART</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975682031-a3f7f0a5c7a2">
+<p>Nile Jacket — $180</p>
+<button onclick="add()">ADD TO CART</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+<p>Street Pants — $90</p>
+<button onclick="add()">ADD TO CART</button>
+</div>
+
+</div>
+
+<footer>
+© 2026 TRENDORA — ALL RIGHTS RESERVED
+</footer>
+
+<script>
+let count = 0;
+
+function add(){
+count++;
+document.getElementById("count").innerText = count;
+}
+</script>
+
+</body>
+</html>
